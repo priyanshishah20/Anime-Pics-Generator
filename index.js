@@ -3,9 +3,6 @@ const animeContEle = document.querySelector('.anime-container');
 const animeImgEle = document.querySelector('.anime-img');
 const animeNameEle = document.querySelector('.anime-name');
 
-/* const animeContEle = document.getElementById('anime-container');
-const animeNameEle = document.getElementById('anime-name');
-const animeImgEle = document.getElementById('anime-img'); */
 
 async function getAnime() {
 
@@ -25,14 +22,11 @@ async function getAnime() {
         animeImgEle.src = data.url;
         animeNameEle.innerText = data.artist;
         
-        /*   const animeContent = data.artist;
-           const animeImg = data.url;
-           animeNameEle.innerText = animeContent;
-           animeImgEle.src = animeImg; */
     } catch (error) {
         btnEle.disabled = false;
         btnEle.innerText = 'Get Anime';
         animeNameEle.innerText = 'An error occured, try again later.';
     }
 }
+
 btnEle.addEventListener('click', getAnime);
